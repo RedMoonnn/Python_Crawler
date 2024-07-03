@@ -42,7 +42,7 @@ def download_movie_view():
         subject_id = url.split('/')[-2]  # URL格式是https://movie.douban.com/subject/123456/
         # url.split('/') 会将字符串 url 按照斜杠 (/) 分割成一个列表。[-2] 是一个索引操作，用于获取这个列表中的倒数第二个元素。
 
-        count+=1
+        count += 1
 
         # 获取电影标题
         response = requests.get(url, headers=headers)
@@ -72,14 +72,15 @@ def download_movie_view():
             "book_id": subject_id,
             "comment_content": cleaned_comments
         })
-        print(count,title)
+        print(count, title)
 
-    return datas1,datas2
+    return datas1, datas2
 
 
-datas1,datas2 = download_movie_view()
+datas1, datas2 = download_movie_view()
 
 from datetime import datetime
+
 # 获取当前时间
 now = datetime.now()
 current_time = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -105,16 +106,3 @@ json_data2 = json.dumps(datas2_to_write, ensure_ascii=False, indent=4)
 with open('comment_data.json', 'w', encoding='utf-8') as f:
     f.write(json_data2)
 # pprint.pprint(datas)
-
-
-
-
-
-
-
-
-
-
-
-
-
