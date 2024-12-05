@@ -36,12 +36,12 @@ def download_movie_view():
     datas1 = []
     datas2 = []
     count = 0
-    for url in urls:
+    for url in urls[0:5]:
         # 提取电影的subject ID
         subject_id = url.split('/')[-2]  # URL格式是https://movie.douban.com/subject/123456/
         # url.split('/') 会将字符串 url 按照斜杠 (/) 分割成一个列表。[-2] 是一个索引操作，用于获取这个列表中的倒数第二个元素。
 
-        count+=1
+        count += 1
 
         # 获取电影标题
         response = requests.get(url, headers=headers)
@@ -58,7 +58,7 @@ def download_movie_view():
             response.raise_for_status()
             soup = BeautifulSoup(response.text, "html.parser")
 
-            for comment_item in soup.select('.comment-item'):
+            for comment_item in soup.find_all(class_="comment-item"):
                 comment = comment_item.find(class_="short").get_text()
                 comments.append(comment)
 
@@ -71,12 +71,12 @@ def download_movie_view():
             "book_id": subject_id,
             "comment_content": cleaned_comments
         })
-        print(count,title)
+        print(count, title)
 
-    return datas1,datas2
+    return datas1, datas2
 
 
-datas1,datas2 = download_movie_view()
+datas1, datas2 = download_movie_view()
 
 json_data1 = json.dumps(datas1, ensure_ascii=False, indent=4)
 with open('movies_data.json', 'w', encoding='utf-8') as f:
@@ -87,4 +87,3 @@ with open('comment_data.json', 'w', encoding='utf-8') as f:
     f.write(json_data2)
 
 # pprint.pprint(datas)
-

@@ -1,47 +1,22 @@
-{
-    "time": {
-        "current_time": "2024-07-03 19:26:10"
+[
+    {
+        "book_id": "1292052",
+        "book_name": "肖申克的救赎 The Shawshank Redemption"
     },
-    "movies": [
-        {
-            "book_id": "36173819",
-            "book_name": "来福大酒店"
-        },
-        {
-            "book_id": "35898983",
-            "book_name": "职业杀手 Hit Man"
-        },
-        {
-            "book_id": "35095466",
-            "book_name": "彷徨之刃"
-        },
-        {
-            "book_id": "36149032",
-            "book_name": "我们一起摇太阳"
-        },
-        {
-            "book_id": "36016451",
-            "book_name": "制暴"
-        },
-        {
-            "book_id": "26586556",
-            "book_name": "绝地战警：生死与共 Bad Boys: Ride or Die"
-        },
-        {
-            "book_id": "36319595",
-            "book_name": "窗边的小豆豆 窓ぎわのトットちゃん"
-        },
-        {
-            "book_id": "36765646",
-            "book_name": "蓦然回首 ルックバック"
-        },
-        {
-            "book_id": "35240117",
-            "book_name": "草木人间"
-        },
-        {
-            "book_id": "35335895",
-            "book_name": "野兽 La bête"
-        }
-    ]
-}
+    {
+        "book_id": "1291546",
+        "book_name": "霸王别姬"
+    },
+    {
+        "book_id": "1292720",
+        "book_name": "阿甘正传 Forrest Gump"
+    },
+    {
+        "book_id": "1292722",
+        "book_name": "泰坦尼克号 Titanic"
+    },
+    {
+        "book_id": "1291561",
+        "book_name": "千与千寻 千と千尋の神隠し"
+    }
+]
